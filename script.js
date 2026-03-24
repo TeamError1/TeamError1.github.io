@@ -174,3 +174,11 @@ if (window.gsap && !prefersReducedMotion) {
     });
   });
 }
+
+// Prevent the demo form from reloading the page.
+const contactForm = document.querySelector("[data-contact-form]");
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+}
