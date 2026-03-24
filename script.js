@@ -26,7 +26,7 @@ if (canvas && hasThree && !prefersReducedMotion && !isSmallScreen) {
     alpha: true,
     antialias: true,
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   // Light setup: ambient + directional for a soft glow.
@@ -143,7 +143,11 @@ if (window.gsap && !prefersReducedMotion) {
   // Smooth scroll for anchor links.
   document.querySelectorAll("a[href^='#']").forEach((link) => {
     link.addEventListener("click", (event) => {
-      const target = document.querySelector(link.getAttribute("href"));
+      const href = link.getAttribute("href");
+      if (!href || href === "#") {
+        return;
+      }
+      const target = document.querySelector(href);
       if (!target) {
         return;
       }
