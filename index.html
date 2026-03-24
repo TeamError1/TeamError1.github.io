@@ -1,28 +1,193 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeamError1 | Futuristic Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#05040a] text-white">
+    <!-- 3D background canvas (powered by Three.js) -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width-device-width, initial-scale=1.0">
-  <title>404 | Page Not Found</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <main class="relative overflow-hidden">
+      <!-- HERO SECTION -->
+      <section
+        id="hero"
+        class="relative flex min-h-screen items-center justify-center px-6 text-center"
+      >
+        <div class="hero-stack max-w-3xl space-y-6">
+          <p class="text-xs uppercase tracking-[0.4em] text-cyan-300/80">
+            Futuristic Developer Collective
+          </p>
+          <h1 class="hero-title text-5xl font-bold md:text-7xl">
+            TeamError1
+          </h1>
+          <p class="hero-subtitle text-lg text-slate-200 md:text-2xl">
+            We Build Modern Web Applications
+          </p>
+          <!-- Primary CTA buttons -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#projects"
+              class="cta-button glow-button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 px-8 py-3 text-sm font-semibold text-slate-900 transition duration-300 hover:scale-105"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full border border-cyan-300/60 px-8 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:border-cyan-300 hover:text-white"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
 
-<body>
-  <div class="container">
-    <div class="left">
-      <h1>404</h1>
-      <div class="text">
-        <h2>whoops
-        </h2>
-        <p>page got lost, try later.</p>
-      </div>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section-padding px-6">
+        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_0.8fr]">
+          <div class="reveal space-y-4">
+            <p class="text-sm uppercase tracking-[0.3em] text-purple-300">
+              About Us
+            </p>
+            <h2 class="text-3xl font-semibold md:text-4xl">
+              Building experiences with speed, clarity, and impact.
+            </h2>
+            <p class="text-slate-300">
+              TeamError1 is a forward-thinking group of developers focused on
+              modern web platforms. We prototype quickly, ship with intention,
+              and craft interfaces that feel effortless.
+            </p>
+          </div>
+          <div class="reveal flex items-center justify-center">
+            <!-- Optional glowing object to complement the 3D background -->
+            <div class="glow-orb h-48 w-48 md:h-56 md:w-56"></div>
+          </div>
+        </div>
+      </section>
 
-      <img src="rocket.png" alt="" class="rocket">
-    </div>
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section-padding px-6">
+        <div class="mx-auto max-w-6xl space-y-10">
+          <div class="reveal space-y-2 text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">
+              Projects
+            </p>
+            <h2 class="text-3xl font-semibold md:text-4xl">
+              Crafted with modern stacks and bold ideas.
+            </h2>
+          </div>
+          <!-- Project cards use hover glow for emphasis -->
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="glow-card reveal space-y-4 rounded-2xl p-6">
+              <h3 class="text-xl font-semibold text-white">Nebula CMS</h3>
+              <p class="text-sm text-slate-300">
+                A headless content platform with instant previews and modular
+                publishing workflows.
+              </p>
+              <span class="text-xs uppercase tracking-[0.2em] text-cyan-200">
+                Next.js · GraphQL
+              </span>
+            </article>
+            <article class="glow-card reveal space-y-4 rounded-2xl p-6">
+              <h3 class="text-xl font-semibold text-white">Pulse Analytics</h3>
+              <p class="text-sm text-slate-300">
+                Real-time dashboards with alerting, forecasting, and
+                interactive data storytelling.
+              </p>
+              <span class="text-xs uppercase tracking-[0.2em] text-cyan-200">
+                React · D3.js
+              </span>
+            </article>
+            <article class="glow-card reveal space-y-4 rounded-2xl p-6">
+              <h3 class="text-xl font-semibold text-white">Orbit Commerce</h3>
+              <p class="text-sm text-slate-300">
+                A futuristic ecommerce experience with immersive product
+                showcases and smooth checkout flows.
+              </p>
+              <span class="text-xs uppercase tracking-[0.2em] text-cyan-200">
+                Vue · Stripe
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <img src="object.jpg" alt="" class="object">
-  </div>
-</body>
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section-padding px-6 pb-24">
+        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1fr_1fr]">
+          <div class="reveal space-y-4">
+            <p class="text-sm uppercase tracking-[0.3em] text-purple-300">
+              Contact
+            </p>
+            <h2 class="text-3xl font-semibold md:text-4xl">
+              Let’s design your next digital launch.
+            </h2>
+            <p class="text-slate-300">
+              Tell us about your product vision and timeline. We’ll reply with
+              a streamlined plan and prototype insights.
+            </p>
+          </div>
+          <!-- Simple contact form (front-end only) -->
+          <form class="reveal space-y-4">
+            <div>
+              <label class="mb-2 block text-sm text-slate-200" for="name">
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Your name"
+                class="form-field w-full rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-400"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-slate-200" for="email">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="you@email.com"
+                class="form-field w-full rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-400"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm text-slate-200" for="message">
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Tell us about your project..."
+                class="form-field w-full rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-400"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="cta-button glow-button inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 px-8 py-3 text-sm font-semibold text-slate-900 transition duration-300 hover:scale-105"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
 
+    <!-- Three.js for 3D background -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <!-- GSAP core + plugins for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
