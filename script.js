@@ -46,24 +46,24 @@ if (canvas && hasThree && !prefersReducedMotion && !isSmallScreen) {
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
-  let targetRotationX = 0;
-  let targetRotationY = 0;
-  let baseRotationX = 0;
-  let baseRotationY = 0;
+  let mouseRotationX = 0;
+  let mouseRotationY = 0;
+  let autoRotationX = 0;
+  let autoRotationY = 0;
 
   // Mouse interaction for subtle rotation.
   window.addEventListener("mousemove", (event) => {
-    targetRotationY = (event.clientX / window.innerWidth - 0.5) * 0.6;
-    targetRotationX = (event.clientY / window.innerHeight - 0.5) * 0.6;
+    mouseRotationY = (event.clientX / window.innerWidth - 0.5) * 0.6;
+    mouseRotationX = (event.clientY / window.innerHeight - 0.5) * 0.6;
   });
 
   // Animation loop: rotate the cube and redraw the scene.
   const animate = () => {
-    baseRotationX += 0.003;
-    baseRotationY += 0.004;
+    autoRotationX += 0.003;
+    autoRotationY += 0.004;
 
-    cube.rotation.x = baseRotationX + targetRotationX;
-    cube.rotation.y = baseRotationY + targetRotationY;
+    cube.rotation.x = autoRotationX + mouseRotationX;
+    cube.rotation.y = autoRotationY + mouseRotationY;
 
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
